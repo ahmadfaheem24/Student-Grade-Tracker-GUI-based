@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes aurora-drift {
+  0% {
+    transform: translate(-10%, -10%) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(10%, 5%) scale(1.15) rotate(15deg);
+  }
+  100% {
+    transform: translate(-10%, -10%) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes aurora-drift-reverse {
+  0% {
+    transform: translate(10%, 10%) scale(1.1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-8%, -8%) scale(1) rotate(-10deg);
+  }
+  100% {
+    transform: translate(10%, 10%) scale(1.1) rotate(0deg);
+  }
+}
+
+.animate-aurora {
+  animation: aurora-drift 22s ease-in-out infinite;
+}
+
+.animate-aurora-reverse {
+  animation: aurora-drift-reverse 26s ease-in-out infinite;
+}
+
+@keyframes grid-pan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 64px 64px;
+  }
+}
+
+.animate-grid {
+  animation: grid-pan 12s linear infinite;
+}
